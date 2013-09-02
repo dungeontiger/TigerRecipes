@@ -1,0 +1,20 @@
+<project name="Recipes.makejar" default="makejar" basedir=".">
+	<property name="dist" value="../testCraftBukkit/plugins"/>
+	<target name ="makejar" description="Creates jar file and deploys to test craftbukkit directory.">
+		<delete file="${dist}/TigerRecipes.jar"/>
+		<delete file="${dist}/TigerRecipes/config.yml"/>
+		<jar jarfile="${dist}/TigerRecipes.jar">
+			<fileset dir="bin">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset file="resources/plugin.yml"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+			<fileset file="resources/config.yml"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+		</jar>
+	</target>
+</project>

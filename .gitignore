@@ -1,0 +1,6 @@
+
+testCraftBukkit/
+bin/
+lib/
+.metadata/
+*.*~
